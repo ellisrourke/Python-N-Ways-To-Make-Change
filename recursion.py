@@ -1,14 +1,17 @@
-
+import time
 class coinRecursion():
-    coins = [1, 2]
-    amount = 4
-    currentCoin = coins[0]
-    def __init__(self):
-        print(self.coinChange(self.amount,self.coins,self.currentCoin))
+    def sieve(self):
+        print("Calculating Sieve of Eratosthenes")
+        return [1,2,3,5,6,7,8,9]
 
+    def __init__(self):
+        amount = 5
+        coins = self.sieve()
+        print(self.coinChange(amount,coins,0),"solutions found in",time.process_time(),"seconds")
 
     def coinChange(self,amount,coins,currentCoin):
-        print(currentCoin)
+        print(self.count,currentCoin,amount)
+
         if(amount == 0):
             return 1
         if(amount < 0):
@@ -16,11 +19,11 @@ class coinRecursion():
 
         combinations = 0
 
-        #for coin in self.coins:
-        for i in range(currentCoin,len(self.coins)):
+        for i in range(currentCoin,len(coins)):
             combinations += self.coinChange(amount - coins[i],coins,i)
-
 
         return combinations
 
 solve = coinRecursion()
+#print(solve," solutions found - Time taken (secs) = ", time.process_time())
+

@@ -6,7 +6,7 @@ def sumCombinations(sum,numbers):
         if(c[p] < currentCoin):
             c[p] = p
         elif(c[p+1] in numbers):
-             = numbers[0]
+            currentCoin = numbers[0]
             #currentCoin = numbers[currentCoin+1]
         print(c[p],end=" ")
 
