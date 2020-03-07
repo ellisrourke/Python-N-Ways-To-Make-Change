@@ -10,7 +10,7 @@ class coinRecursion():
         print(self.coinChange(amount,coins,0),"solutions found in",time.process_time(),"seconds")
 
     def coinChange(self,amount,coins,currentCoin):
-        print(self.count,currentCoin,amount)
+        print(currentCoin,amount)
 
         if(amount == 0):
             return 1
