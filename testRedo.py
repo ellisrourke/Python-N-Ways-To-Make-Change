@@ -1,6 +1,7 @@
 import time
 
 #todo research generator
+#todo convert into iterative
 #optimal memory space
 def calculateChange(n, availableCoins, usedCoins,lowerLimit,upperLimit):
     # if sum of coins is answer, return combination
@@ -17,8 +18,7 @@ def calculateChange(n, availableCoins, usedCoins,lowerLimit,upperLimit):
 
     else:
         for i in calculateChange(n, availableCoins, usedCoins + [availableCoins[0]],lowerLimit,upperLimit):
-            print(usedCoins, [availableCoins[0]])
-
+            #print(usedCoins, [availableCoins[0]])
             yield i
         for i in calculateChange(n,availableCoins[1:],usedCoins,lowerLimit,upperLimit):
             yield i
